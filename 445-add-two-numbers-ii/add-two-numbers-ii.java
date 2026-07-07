@@ -32,26 +32,25 @@ class Solution {
         int sum = 0;
         int carry = 0;
 
-        while(t1!=null || t2!=null){
-            while (t1 != null || t2 != null) {
+        
+        while (t1 != null || t2 != null) {
+            
+            int x = (t1 != null) ? t1.val : 0;
+            int y = (t2 != null) ? t2.val : 0;
 
-    int x = (t1 != null) ? t1.val : 0;
-    int y = (t2 != null) ? t2.val : 0;
+        sum = x + y + carry;
+        carry = sum / 10;
 
-    sum = x + y + carry;
-    carry = sum / 10;
+        temp.next = new ListNode(sum % 10);
+        temp = temp.next;
 
-    temp.next = new ListNode(sum % 10);
-    temp = temp.next;
+        if (t1 != null) t1 = t1.next;
+        if (t2 != null) t2 = t2.next;
+    }
 
-    if (t1 != null) t1 = t1.next;
-    if (t2 != null) t2 = t2.next;
-}
-
-if (carry != 0) {
-    temp.next = new ListNode(carry);
-}
-        }
+        if (carry != 0) {
+        temp.next = new ListNode(carry);
+    }
 
         return reverseList(dummy.next);
 
