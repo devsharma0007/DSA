@@ -15,15 +15,13 @@
  */
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
-        ArrayList<Integer> ans = new ArrayList<>();
-
+       
+        ArrayList<Integer> ans  =  new ArrayList<>();
         view(root,0,ans);
         return ans;
-        
     }
-    public void view(TreeNode root, int level,ArrayList<Integer> ans){
+    public void view(TreeNode root,int level,ArrayList<Integer> ans){
         if(root==null) return;
-
         if(ans.size()==level){
             ans.add(root.val);
         }
