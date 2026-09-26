@@ -1,14 +1,16 @@
 class Solution {
-    public int[][] transpose(int[][] a) {
-        int row = a.length;
-        int column  = a[0].length;
-        int [][] b = new int[column][row];
-        for(int i = 0;i<b.length;i++){
-            for(int j = 0;j<b[0].length;j++){
-                b[i][j] = a[j][i];
+    public int[][] transpose(int[][] mat) {
+        
+        int columns = mat.length;
+        int rows = mat[0].length;
+
+        int[][] bat = new int[rows][columns];
+
+        for(int i = 0;i<bat.length;i++){
+            for(int j = 0;j<bat[0].length;j++){
+                bat[i][j] = mat[j][i];
             }
         }
-        return b;
-        
+        return bat;
     }
 }
